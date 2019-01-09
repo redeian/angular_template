@@ -1,8 +1,9 @@
 {
-  "name": "quotecollect",
-  "short_name": "quotecollect",
-  "theme_color": "#1976d2",
+  "name": "คำคมขงเบ้ง",
+  "short_name": "คำคมขงเบ้ง",
+  "theme_color": "#D32F2F",
   "background_color": "#fafafa",
+  "orientation": "any",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",

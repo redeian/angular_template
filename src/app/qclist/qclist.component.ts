@@ -16,4 +16,16 @@ export class QclistComponent implements OnInit {
       this.quotes = data;
     });
   }
+
+  share(shareText) {
+    if ('share' in navigator) {
+      (navigator as any)
+        .share({ title: 'Quote Share', text: shareText, url: window.location.href })
+        .then(() => console.log('shared'))
+        .catch(() => console.log('Error sharing'));
+    } else {
+      const shareURL = `https://www.facebook.com/sharer/sharer.php?u=${shareText}`;
+      location.href = shareURL;
+    }
+  }
 }
