@@ -12,17 +12,26 @@ export class QclistComponent implements OnInit {
   quotes = [];
 
   iFrameVideo: any;
-  video_url = 'https://www.youtube.com/watch?v=NUzJ0KUvHDc';
+  video_id = 'NUzJ0KUvHDc';
 
   constructor(private data: DataService, private embedService: EmbedVideoService) {
-    this.iFrameVideo = this.embedService.embed(this.video_url, {
-      attr: { width: '100%', height: 250 }
-    });
+    this.embed(0);
   }
 
   ngOnInit() {
     this.data.getList(data => {
       this.quotes = data;
+    });
+  }
+
+  embed(startTime) {
+    this.iFrameVideo = this.embedService.embed_youtube(this.video_id, {
+      query: { start: startTime },
+      attr: {
+        width: '100%',
+        height: 250,
+        allow: 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+      }
     });
   }
 

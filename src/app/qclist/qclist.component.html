@@ -1,10 +1,9 @@
 <div [innerHtml]="iFrameVideo"></div>
 
 <mat-card *ngFor="let quote of quotes">
-  {{ quote }}
-  <!-- <mat-card-actions>
-    <button mat-button (click)="share(shareText)">
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-card-actions> -->
+  <mat-card-content> {{ quote.text }} </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button (click)="embed(quote.time)"><mat-icon>location_on</mat-icon></button>
+  </mat-card-actions>
 </mat-card>
