@@ -12,7 +12,9 @@ import {
   MatCheckboxModule,
   MatCardModule,
   MatIconModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatSidenavModule,
+  MatListModule
 } from '@angular/material';
 
 import { QclistComponent } from './qclist/qclist.component';
@@ -31,7 +33,9 @@ const routes: Routes = [{ path: '', component: QclistComponent }];
     MatCheckboxModule,
     MatCardModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
