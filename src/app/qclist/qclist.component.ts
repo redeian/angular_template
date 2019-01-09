@@ -7,9 +7,9 @@ import { DataService } from '../data.service';
   styleUrls: ['./qclist.component.css']
 })
 export class QclistComponent implements OnInit {
-  constructor(private data: DataService) {}
-
   quotes = [];
+
+  constructor(private data: DataService) {}
 
   ngOnInit() {
     this.data.getList(data => {
