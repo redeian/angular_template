@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
+import { EmbedVideoService } from 'ngx-embed-video';
+
 @Component({
   selector: 'app-qclist',
   templateUrl: './qclist.component.html',
@@ -9,7 +11,14 @@ import { DataService } from '../data.service';
 export class QclistComponent implements OnInit {
   quotes = [];
 
-  constructor(private data: DataService) {}
+  iFrameVideo: any;
+  video_url = 'https://www.youtube.com/watch?v=NUzJ0KUvHDc';
+
+  constructor(private data: DataService, private embedService: EmbedVideoService) {
+    this.iFrameVideo = this.embedService.embed(this.video_url, {
+      attr: { width: '100%', height: 250 }
+    });
+  }
 
   ngOnInit() {
     this.data.getList(data => {
