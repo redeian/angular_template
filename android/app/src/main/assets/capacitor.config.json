@@ -1,0 +1,6 @@
+{
+  "appId": "com.ubitsoft.kongmingquote",
+  "appName": "คำคมขงเบ้ง",
+  "bundledWebRuntime": false,
+  "webDir": "dist"
+}
